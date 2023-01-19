@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""
-same as 0-hbtn_status with requests model
+"""Fetches the URL: https://intranet.hbtn.io/status
+with `requests` module
 """
 
-if __name__ == '__main__':
-    import requests
-    html = requests.get('https://intranet.hbtn.io/status')
-    print("Body response:")
-    print("\t- type: {}".format(html.text.__class__))
-    print("\t- content: {}".format(html.text))
+import requests
+
+
+if __name__ == "__main__":
+    req = requests.get('https://intranet.hbtn.io/status')
+
+    print('Body response:')
+    print('\t- type: {_type}'.format(_type=type(req.text)))
+    print('\t- content: {_content}'.format(_content=req.text))
